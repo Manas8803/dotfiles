@@ -26,8 +26,8 @@ bar=(
 
 # Item Defaults
 item_defaults=(
-  background.padding_left=$((16 / 2))
-  background.padding_right=$((16 / 2))
+  background.padding_left=$((26 / 2))
+  background.padding_right=$((26 / 2))
   icon.padding_left=$(($PADDINGS / 2))
   icon.background.corner_radius=4
   icon.background.height=18
@@ -68,7 +68,7 @@ bracket_defaults=(
   background.color=00000000
   blur_radius=50
   label.font="$FONT:Regular:14"
-  background.corner_radius=15
+  background.corner_radius=10
 )
 
 menu_defaults=(

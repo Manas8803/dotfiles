@@ -17,7 +17,7 @@ update_icons() {
 
   if [[ "$CURRENT_SID" == "$SID" ]]; then
     BACKGROUND_COLOR=$HIGHLIGHT_25
-    PADDING=$PADDINGS
+    PADDING=14
     create_icons "$CURRENT_SID"
     # LABEL=$BAR_COLOR
   else
@@ -26,12 +26,12 @@ update_icons() {
     PADDING=0
   fi
 
-  sketchybar --animate tanh 10                                   \
+  sketchybar --animate tanh 8                                   \
              --set space.$SID icon.highlight=$SELECTED           \
                               label.highlight=$SELECTED          \
                               background.color=$BACKGROUND_COLOR \
-                              icon.padding_left=8         \
-                              icon.padding_right=8
+                              icon.padding_left=$PADDING         \
+                              label.padding_right=$PADDING
 }
 
 
@@ -49,10 +49,10 @@ create_label() {
     # Set up badge
     BADGE="$(set_badge $APP)"
     
-    # Add a space if there is a badge
-    if [[ $BADGE ]]; then
-      LABEL+=""
-    fi
+    # # Add a space if there is a badge
+    # if [[ $BADGE ]]; then
+    #   LABEL+=""
+    # fi
     
     # Add badge
     LABEL+="$BADGE"
