@@ -14,6 +14,7 @@ render_item() {
   DARK_GREEN=$(getcolor dark_green)
   YELLOW=$(getcolor yellow)
   RED=$(getcolor red)
+  WHITE=$(getcolor white)
 
   # Set icon based on battery level
   if [ $PERCENTAGE -ge 90 ]; then
@@ -38,7 +39,7 @@ render_item() {
     fi
   else
     if [ $PERCENTAGE -ge 30 ]; then
-      COLOR=$DARK_GREEN
+      COLOR=$WHITE
     elif [ $PERCENTAGE -ge 20 ]; then
       COLOR=$YELLOW
     else

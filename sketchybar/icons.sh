@@ -12,20 +12,6 @@ BELL=􀋚
 BELL_DOT=􀝗
 MUSIC=􀑪
 
-# Git Icons
-GIT_ISSUE=􀍷
-GIT_DISCUSSION=􀒤
-GIT_PULL_REQUEST=􀙡
-GIT_COMMIT=􀡚
-GIT_INDICATOR=􀂓
-
-# Spotify Icons
-SPOTIFY_BACK=􀊎
-SPOTIFY_PLAY_PAUSE=􀊈
-SPOTIFY_NEXT=􀊐
-SPOTIFY_SHUFFLE=􀊝
-SPOTIFY_REPEAT=􀊞
-
 # Yabai Icons
 YABAI_STACK=􀏭
 YABAI_FULLSCREEN_ZOOM=􀂓
@@ -62,7 +48,8 @@ __icon_map "Code"
 export ICON_DEV="${icon_result}"
 export ICON_VSCODIUM= # nvim, xcode, vscode
 export ICON_FILE=󰉋 # ranger, finder
-export ICON_FINDER=󰀶
+__icon_map "Finder"
+export ICON_FINDER="${icon_result}"
 export ICON_GIT=󰊢 # lazygit
 export ICON_LIST=󱃔 # taskwarrior, taskwarrior-tui, reminders, onenote
 export ICON_SCREENSAVOR=󱄄 # unimatrix, pipe.sh
@@ -77,7 +64,9 @@ export ICON_NOTE=󱞎 # notes, textedit, stickies, word, bat
 export ICON_CAMERA=󰄀 # photo booth
 export ICON_WEB=󰇧 # safari, beam, duckduckgo, arc, edge, chrome, firefox
 export ICON_HOMEAUTOMATION=󱉑 # home
-export ICON_MUSIC=􀫀 # music, spotify
+__icon_map "Music"
+export ICON_MUSIC="${icon_result}"
+# export ICON_MUSIC=􀫀 # music, spotify
 export ICON_PODCAST=󰦔 # podcasts
 export ICON_PLAY=󱉺 # tv, quicktime, vlc
 export ICON_BOOK=󰂿 # books

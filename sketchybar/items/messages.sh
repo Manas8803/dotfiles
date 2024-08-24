@@ -6,6 +6,7 @@ messages=(
   icon=􀌤
   background.color=$(getcolor green)
   updates=on
+  label.font="$FONT:Regular:12"
   script="$PLUGIN_DIR/messages.sh"
   click_script="open -a /System/Applications/Messages.app"
 )

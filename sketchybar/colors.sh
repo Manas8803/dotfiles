@@ -18,10 +18,10 @@ getcolor() {
   local o10=0x1a
   local o0=0x00
 
-  #Tokyo Night
+  #Vuesion
   local blue=#5eb8c5
   local teal=#d80f8f
-  local cyan=#b10c76
+  local cyan=#33cccc
   local grey=#565f89
   local green=#9ece6a
   local yellow=#e0af68
@@ -31,7 +31,7 @@ getcolor() {
   local black=#3b585d
   local trueblack=#000000
   local white=#cfc9c2
-  local dark_green=#00c000 
+  local dark_green=#00ca00 
 
   case $opacity in
   75) local opacity=$o75 ;;
@@ -73,7 +73,7 @@ daily_color() {
 }
 
 # Pick a random color name
-RANDOMHIGHLIGHT=blue
+RANDOMHIGHLIGHT=cyan
 
 # Bar and item colors
 export BAR_COLOR=$(getcolor black 25)
