@@ -23,7 +23,6 @@ source "$ITEM_DIR/spaces.sh"
 # source "$ITEM_DIR/countdown.sh"
 
 # Right
-source "$ITEM_DIR/control_center.sh"
 source "$ITEM_DIR/datetime.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/battery.sh"

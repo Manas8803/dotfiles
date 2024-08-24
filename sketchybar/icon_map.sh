@@ -633,7 +633,7 @@ function __icon_map() {
    "WezTerm")
         icon_result=":wezterm:"
         ;;
-   "WhatsApp")
+   "WhatsApp" | "‎WhatsApp")
         icon_result=":whats_app:"
         ;;
    "Xcode")

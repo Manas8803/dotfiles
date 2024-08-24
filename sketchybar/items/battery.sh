@@ -1,8 +1,9 @@
 #!/bin/env/bash
-
+source "$CONFIG_DIR/globalstyles.sh"
 battery=(
   icon.font.size=16
   icon.padding_right=0
+  label.font="$FONT:BOLD:14"
   icon.font.style="Light"
   update_freq=30
   popup.align=right                                            

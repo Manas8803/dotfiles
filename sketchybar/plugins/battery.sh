@@ -1,75 +1,63 @@
 #!/bin/bash
-
 source "$CONFIG_DIR/colors.sh"
-TMP="/tmp/drawing_state.txt"
+source "$CONFIG_DIR/globalstyles.sh"
 
 render_item() {
   PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
   CHARGING=$(pmset -g batt | grep 'AC Power')
-  COLOR=$ICON_COLOR
-  local DRAWING=$(get_label_state)
 
   if [ $PERCENTAGE = "" ]; then
     exit 0
   fi
 
-  case ${PERCENTAGE} in
-  9[0-9] | 100)
-    ICON="􀛨"
-    ;;
-  [6-8][0-9])
-    ICON="􀺸"
-    ;;
-  [3-5][0-9])
-    ICON="􀺶"
-    ;;
-  [1-2][0-9])
-    ICON="􀛩"
-    COLOR=$(getcolor yellow)
-    DRAWING="on"
-    ;;
-  *)
-    ICON="􀛪"
-    COLOR=$(getcolor red)
-    DRAWING="on"
-    ;;
-  esac
+  # Define colors using getcolor function
+  DARK_GREEN=$(getcolor dark_green)
+  YELLOW=$(getcolor yellow)
+  RED=$(getcolor red)
 
+  # Set icon based on battery level
+  if [ $PERCENTAGE -ge 90 ]; then
+    ICON="􀛨"
+  elif [ $PERCENTAGE -ge 60 ]; then
+    ICON="􀺸"
+  elif [ $PERCENTAGE -ge 30 ]; then
+    ICON="􀺶"
+  elif [ $PERCENTAGE -ge 20 ]; then
+    ICON="􀛩"
+  else
+    ICON="􀛪"
+  fi
+
+  # Set color based on battery level and charging status
   if [[ $CHARGING != "" ]]; then
     ICON="􀢋"
-  fi
-
-  sketchybar --set $NAME icon=$ICON icon.color=$COLOR label=$PERCENTAGE% label.color=$LABEL_COLOR label.drawing=$DRAWING
-}
-
-save_label_state() {
-  echo "$(sketchybar --query $NAME | jq -r '.label.drawing')" > "$TMP"
-}
-
-get_label_state() {
-  if [ -e "$TMP" ]; then
-    cat "$TMP"
+    if [ $PERCENTAGE -ge 30 ]; then
+      COLOR=$DARK_GREEN
+    else
+      COLOR=$YELLOW
+    fi
   else
-    echo "off" > "$TMP"
+    if [ $PERCENTAGE -ge 30 ]; then
+      COLOR=$DARK_GREEN
+    elif [ $PERCENTAGE -ge 20 ]; then
+      COLOR=$YELLOW
+    else
+      COLOR=$RED
+    fi
   fi
-}
 
-label_toggle() {
-  if [[ $(get_label_state) == "on" ]]; then
-    DRAWING="off"
-  else
-    DRAWING="on"
-  fi
-  
-  sketchybar --set $NAME label.drawing=$DRAWING
-  save_label_state
+  # Update sketchybar
+  sketchybar --set $NAME icon=$ICON \
+                        icon.color=$COLOR \
+                        label="${PERCENTAGE}%" \
+                        label.drawing=on 
 }
 
 case "$SENDER" in
-"mouse.clicked")
-  label_toggle
-  ;;
-"routine" | "forced" | "power_source_change")
-  render_item
-  ;;
+  "mouse.clicked")
+    # Do nothing on click, as we always want to show the percentage
+    ;;
+  "routine"|"forced"|"power_source_change")
+    render_item
+    ;;
 esac

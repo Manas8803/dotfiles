@@ -18,20 +18,6 @@ getcolor() {
   local o10=0x1a
   local o0=0x00
 
-  # Material Darker
-  # local blue=#82aaff
-  # local teal=#64ffda
-  # local cyan=#89ddff
-  # local grey=#3b4252
-  # local green=#c3e88d
-  # local yellow=#ffcb6b
-  # local orange=#f78c6c
-  # local red=#ff5370
-  # local purple=#c792ea
-  # local black=#0f111a
-  # local trueblack=#000000
-  # local white=#eeeeee
-
   #Tokyo Night
   local blue=#5eb8c5
   local teal=#d80f8f
@@ -45,24 +31,7 @@ getcolor() {
   local black=#3b585d
   local trueblack=#000000
   local white=#cfc9c2
-
-# OK #f7768e	This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red
-# OK #ff9e64	Number and Boolean constants, Language support constants
-# OK #e0af68	Function parameters, Regex character sets, Terminal Yellow
-# OK #9ece6a	Strings, CSS class names
-# OK #73daca	Object literal keys, Markdown links, Terminal Green
-# OK #b4f9f8	Regex literal strings
-#  #2ac3de	Language support functions, CSS HTML elements
-# OK #7dcfff	Object properties, Regex quantifiers and flags, Markdown headings, Terminal Cyan, Markdown code, Import/export keywords
-#  #7aa2f7	Function names, CSS property names, Terminal Blue
-# OK #bb9af7	Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta
-#  #c0caf5	Variables, Class names, Terminal White
-#  #a9b1d6	Editor Foreground
-#  #9aa5ce	Markdown Text, HTML Text
-#  #cfc9c2	Parameters inside functions (semantic highlighting only)
-#  OK #565f89	Comments
-#  #414868	Terminal Black
-#  #1a1b26	Editor Background (Night)
+  local dark_green=#00c000 
 
   case $opacity in
   75) local opacity=$o75 ;;
@@ -86,6 +55,7 @@ getcolor() {
   black) local color=$black ;;
   trueblack) local color=$trueblack ;;
   white) local color=$white ;;
+  dark_green) local color=$dark_green ;;  # Added DARK_GREEN case
   *)
     echo "Invalid color name: $color_name" >&2
     return 1
