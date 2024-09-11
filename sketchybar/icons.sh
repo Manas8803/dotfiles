@@ -71,7 +71,6 @@ export ICON_PODCAST=󰦔 # podcasts
 export ICON_PLAY=󱉺 # tv, quicktime, vlc
 export ICON_BOOK=󰂿 # books
 export ICON_BOOKINFO=󱁯 # font book, dictionary
-export ICON_PREVIEW=󰋲 # screenshot, preview
 export ICON_PASSKEY=󰷡 # 1password
 export ICON_DOWNLOAD=󱑢 # progressive downloader, transmission
 export ICON_CAST=󱒃 # airflow
@@ -97,6 +96,10 @@ export ICON_CONTROLCENTER=􀜊
 # My apps
 __icon_map "Discord"
 export ICON_DISCORD="${icon_result}" # Discord
+__icon_map "Postman"
+export ICON_POSTMAN="${icon_result}" # Postman
+__icon_map "OBS"
+export ICON_OBS="${icon_result}" # OBS
 __icon_map "Obsidian"
 export ICON_OBSIDIAN="${icon_result}"
 __icon_map "WhatsApp"
@@ -123,3 +126,4 @@ __icon_map "Docker Desktop"
 export ICON_DOCKER_DESKTOP="${icon_result}"
 __icon_map "App Store"
 export ICON_APP_STORE="${icon_result}"
+export ICON_PREVIEW=󰋲 

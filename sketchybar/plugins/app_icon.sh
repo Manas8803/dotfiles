@@ -109,6 +109,9 @@ case "$1" in
 "Podcasts")
 	RESULT=$ICON_PODCAST
 	;;
+"Postman")
+	RESULT=$ICON_POSTMAN
+	;;
 "TV" | "QuickTime Player" | "VLC")
 	RESULT=$ICON_PLAY
 	;;
@@ -183,6 +186,9 @@ case "$1" in
 	;;
 "JDownloader2")
 	RESULT=$ICON_DOWNLOAD
+	;;
+"OBS")
+	RESULT=$ICON_OBS
 	;;
 "SF Symbols")
 	RESULT=$ICON_ICON
