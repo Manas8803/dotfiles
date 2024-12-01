@@ -9,6 +9,7 @@ music=(
   popup.align=center
   icon.padding_right=$PADDINGS
   label.padding_left=28
+  label.padding_right=78
   # padding_right=$(($PADDINGS * 2))
   drawing=off
   label="Loading…"

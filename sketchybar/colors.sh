@@ -13,17 +13,19 @@ getcolor() {
 
   local o100=0xff
   local o75=0xbf
+  local o60=0xac
   local o50=0x80
   local o25=0x40
   local o10=0x1a
   local o0=0x00
 
   #Vuesion
-  local blue=#5eb8c5
   local teal=#d80f8f
   local cyan=#33cccc
+  local blue=#446e9d
   local grey=#565f89
   local green=#9ece6a
+  local hgreen=#a4d8ba
   local yellow=#e0af68
   local orange=#ff9e64
   local red=#f7768e
@@ -35,6 +37,7 @@ getcolor() {
 
   case $opacity in
   75) local opacity=$o75 ;;
+  60) local opacity=$o60 ;;
   50) local opacity=$o50 ;;
   25) local opacity=$o25 ;;
   10) local opacity=$o10 ;;
@@ -44,6 +47,7 @@ getcolor() {
 
   case $color_name in
   blue) local color=$blue ;;
+  hgreen) local color=$hgreen ;;
   teal) local color=$teal ;;
   cyan) local color=$cyan ;;
   grey) local color=$grey ;;
@@ -73,10 +77,10 @@ daily_color() {
 }
 
 # Pick a random color name
-RANDOMHIGHLIGHT=cyan
+RANDOMHIGHLIGHT=hgreen
 
 # Bar and item colors
-export BAR_COLOR=$(getcolor black 25)
+export BAR_COLOR=$(getcolor trueblack 60)
 export BAR_BORDER_COLOR=$(getcolor black 50)
 export HIGHLIGHT=$(getcolor $RANDOMHIGHLIGHT)
 export HIGHLIGHT_75=$(getcolor $RANDOMHIGHLIGHT 75)

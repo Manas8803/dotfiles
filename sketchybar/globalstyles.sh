@@ -11,7 +11,7 @@ FONT="JetBrains Mono"
 
 # Bar Appearance
 bar=(
-  color=0xbd111f16
+  color=$BAR_COLOR
   position=top
   y_offset=4
   topmost=off
