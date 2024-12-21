@@ -61,10 +61,13 @@ case "$1" in
 "Voice Memos")
 	RESULT=$ICON_MICROPHONE
 	;;
-"Messages" | "Slack" | "Microsoft Teams" | "Telegram")
+"Messages" | "Microsoft Teams" | "Telegram")
 	RESULT=$ICON_CHAT
 	;;
-"WhatsApp Messenger" | "WhatsApp")
+"Slack")
+	RESULT=$ICON_SLACK
+	;;
+"WhatsApp" | "‎WhatsApp")
 	RESULT=$ICON_WHATSAPP
 	;;
 "Discord")
@@ -180,6 +183,9 @@ case "$1" in
 	;;
 "Figma")
 	RESULT=$ICON_FIGMA
+	;;
+"Zen Browser")
+	RESULT=$ICON_ZEN_BROWSER
 	;;
 "KiCad")
 	RESULT=$ICON_KICAD

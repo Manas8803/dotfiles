@@ -42,6 +42,9 @@ function __icon_map() {
    "Android Studio")
         icon_result=":android_studio:"
         ;;
+   "Anki")
+        icon_result=":anki:"
+        ;;
    "Anytype")
         icon_result=":anytype:"
         ;;
@@ -53,6 +56,9 @@ function __icon_map() {
         ;;
    "Arc")
         icon_result=":arc:"
+        ;;
+   "Arduino" | "Arduino IDE")
+        icon_result=":arduino:"
         ;;
    "Atom")
         icon_result=":atom:"
@@ -105,8 +111,14 @@ function __icon_map() {
    "Caprine")
         icon_result=":caprine:"
         ;;
+   "Amazon Chime")
+        icon_result=":chime:"
+        ;;
    "Citrix Workspace" | "Citrix Viewer")
         icon_result=":citrix:"
+        ;;
+   "Claude")
+        icon_result=":claude:"
         ;;
    "ClickUp")
         icon_result=":click_up:"
@@ -114,14 +126,23 @@ function __icon_map() {
    "Code" | "Code - Insiders")
         icon_result=":code:"
         ;;
+   "Cold Turkey Blocker")
+        icon_result=":cold_turkey_blocker:"
+        ;;
    "Color Picker" | "数码测色计")
         icon_result=":color_picker:"
+        ;;
+   "Copilot")
+        icon_result=":copilot:"
         ;;
    "CotEditor")
         icon_result=":coteditor:"
         ;;
    "Creative Cloud")
         icon_result=":creative_cloud:"
+        ;;
+   "Cursor")
+        icon_result=":cursor:"
         ;;
    "Cypress")
         icon_result=":cypress:"
@@ -165,6 +186,9 @@ function __icon_map() {
    "Drafts")
         icon_result=":drafts:"
         ;;
+   "draw.io")
+        icon_result=":draw_io:"
+        ;;
    "Dropbox")
         icon_result=":dropbox:"
         ;;
@@ -201,6 +225,9 @@ function __icon_map() {
    "Fork")
         icon_result=":fork:"
         ;;
+   "FreeTube")
+        icon_result=":freetube:"
+        ;;
    "Fusion")
         icon_result=":fusion:"
         ;;
@@ -230,6 +257,9 @@ function __icon_map() {
         ;;
    "IntelliJ IDEA")
         icon_result=":idea:"
+        ;;
+   "IINA")
+        icon_result=":iina:"
         ;;
    "Adobe Illustrator"* | "Illustrator")
         icon_result=":illustrator:"
@@ -423,6 +453,9 @@ function __icon_map() {
    "Opera")
         icon_result=":opera:"
         ;;
+   "OrbStack")
+        icon_result=":orbstack:"
+        ;;
    "OrcaSlicer")
         icon_result=":orcaslicer:"
         ;;
@@ -444,6 +477,12 @@ function __icon_map() {
    "PDF Expert")
         icon_result=":pdf_expert:"
         ;;
+   "Pearcleaner")
+        icon_result=":pearcleaner:"
+        ;;
+   "Phoenix Slides")
+        icon_result=":phoenix_slides:"
+        ;;
    "Adobe Photoshop"*)
         icon_result=":photoshop:"
         ;;
@@ -455,6 +494,12 @@ function __icon_map() {
         ;;
    "Pine")
         icon_result=":pine:"
+        ;;
+   "Plex")
+        icon_result=":plex:"
+        ;;
+   "Plexamp")
+        icon_result=":plexamp:"
         ;;
    "Podcasts" | "播客")
         icon_result=":podcasts:"
@@ -603,6 +648,9 @@ function __icon_map() {
    "Tweetbot" | "Twitter")
         icon_result=":twitter:"
         ;;
+   "UTM")
+        icon_result=":utm:"
+        ;;
    "MacVim" | "Vim" | "VimR")
         icon_result=":vim:"
         ;;
@@ -647,6 +695,9 @@ function __icon_map() {
         ;;
    "Zed")
         icon_result=":zed:"
+        ;;
+   "Zen Browser")
+        icon_result=":zen_browser:"
         ;;
    "Zeplin")
         icon_result=":zeplin:"

@@ -6,9 +6,9 @@ alt - w : yabai -m window --focus north
 alt - a : yabai -m window --focus west
 alt - d : yabai -m window --focus east
 
-#change focus between external displays (left and right)
-alt - j: yabai -m display --focus west
-alt - k: yabai -m display --focus east
+# change focus between external displays (left and right)
+alt - j : yabai -m display --focus west
+alt - k : yabai -m display --focus east
 
 # -- Modifying the Layout --
 
@@ -23,7 +23,6 @@ shift + alt - y : yabai -m space --mirror x-axis
 
 # toggle window float
 shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-
 
 # -- Modifying Window Size --
 
@@ -50,7 +49,6 @@ ctrl + alt - d : yabai -m window --warp east
 # move window to display left and right
 shift + alt - v : yabai -m window --display west; yabai -m display --focus west;
 shift + alt - b : yabai -m window --display east; yabai -m display --focus east;
-
 
 # move window to prev and next space
 shift + alt - q : yabai -m window --space prev;
@@ -79,7 +77,7 @@ shift + alt - n : yabai -m space --create && \
                    yabai -m space --focus "${index}"
 
 # resize window
-alt + shift - h : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
-alt + shift - k : yabai -m window north --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
-alt + shift - j : yabai -m window south --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
-alt + shift - l : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
+alt + shift - h : yabai -m window --resize left:-20:0 2> /dev/null || yabai -m window --resize left:-20:0
+alt + shift - k : yabai -m window --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
+alt + shift - j : yabai -m window --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
+alt + shift - l : yabai -m window --resize right:20:0 2> /dev/null || yabai -m window --resize right:20:0

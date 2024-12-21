@@ -96,6 +96,8 @@ export ICON_CONTROLCENTER=􀜊
 # My apps
 __icon_map "Discord"
 export ICON_DISCORD="${icon_result}" # Discord
+__icon_map "Slack"
+export ICON_SLACK="${icon_result}" # Slack
 __icon_map "Postman"
 export ICON_POSTMAN="${icon_result}" # Postman
 __icon_map "OBS"
@@ -126,4 +128,6 @@ __icon_map "Docker Desktop"
 export ICON_DOCKER_DESKTOP="${icon_result}"
 __icon_map "App Store"
 export ICON_APP_STORE="${icon_result}"
+__icon_map "Zen Browser"
+export ICON_ZEN_BROWSER="${icon_result}"
 export ICON_PREVIEW=󰋲 
