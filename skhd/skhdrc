@@ -10,6 +10,16 @@ ctrl - 7 : yabai -m space --focus 7
 ctrl - 8 : yabai -m space --focus 8
 ctrl - 9 : yabai -m space --focus 9
 
+shift + ctrl - 1 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  1 && sketchybar --reload
+shift + ctrl - 2 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  2 && sketchybar --reload
+shift + ctrl - 3 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  3 && sketchybar --reload
+shift + ctrl - 4 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  4 && sketchybar --reload
+shift + ctrl - 5 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  5 && sketchybar --reload
+shift + ctrl - 6 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  6 && sketchybar --reload
+shift + ctrl - 7 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  7 && sketchybar --reload
+shift + ctrl - 8 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  8 && sketchybar --reload
+shift + ctrl - 9 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  9 && sketchybar --reload
+
 # change window focus within space
 alt - s : yabai -m window --focus south
 alt - w : yabai -m window --focus north
