@@ -6,7 +6,7 @@
 </a>
 </p>
 
-_My current desktop setup with yabai window manager_
+_My workflow setup with yabai window manager_
 
 <p align="center">
 <a href="./assets/Workflow.jpg">
