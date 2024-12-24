@@ -13,11 +13,11 @@ update() {
     COLOR=$TRANSPARENT
   fi
 
-  sketchybar --animate tanh 15                     \
+  sketchybar --animate linear 0.0                 \
              --set $NAME icon.highlight=$SELECTED  \
-                         label.highlight=$SELECTED \
-                         background.color=$COLOR   \
-                         background.y_offset=$OFFSET
+                      label.highlight=$SELECTED \
+                      background.color=$COLOR   \
+                      background.y_offset=$OFFSET
   
   # app="$(echo "$INFO" | jq -r '.apps | keys[0]')"
 
