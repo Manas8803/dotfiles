@@ -13,6 +13,5 @@
 # @raycast.authorURL https://raycast.com/manas8803
 
 yabai --restart-service
+sleep 1
 sketchybar --reload
-brew services restart borders
-brew update

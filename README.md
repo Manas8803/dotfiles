@@ -22,7 +22,7 @@ _Current workflow featuring my daily applications and window management_
 </a>
 </p>
 
-_Custom sketchybar configuration with system stats_
+_Custom sketchybar configuration_
 
 ## ✨ Details
 
