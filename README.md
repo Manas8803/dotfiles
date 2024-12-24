@@ -45,7 +45,7 @@ A minimal and productive MacOS setup focused on keyboard-driven workflow.
 
 ### Themes & Icons
 
-- **Bar Icons**: sketchybar-app-font
+- **Bar Icons**: [sketchybar-app-font](https://github.com/kvndrsslr/sketchybar-app-font) - Custom icon font for system monitoring and application indicators
 
 ## 📝 Configuration
 
@@ -71,6 +71,20 @@ alt - k : yabai -m window --focus north
 # Example sketchybar configuration
 sketchybar --add item clock right
 sketchybar --set clock update_freq=10
+
+# Load custom font
+FONT="SF Pro" # Primary font
+NERD_FONT="sketchybar-app-font:Regular:16.0" # Custom icon font
+
+sketchybar --bar \
+    height=32 \
+    blur_radius=30 \
+    position=top \
+    padding_left=10 \
+    padding_right=10 \
+    color=0x15ffffff \
+    font_family=$FONT \
+    icon_font_family=$NERD_FONT
 ```
 
 ## ⚙️ Customization
