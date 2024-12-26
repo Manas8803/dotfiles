@@ -17,7 +17,7 @@ local wifi_up = sbar.add("item", "widgets.wifi1", {
     font = {
       family = settings.font.numbers,
       style = settings.font.style_map["Bold"],
-      size = 11.6,
+      size = 11.0,
     },
     color = colors.red,
     string = "Unknown SSID",
