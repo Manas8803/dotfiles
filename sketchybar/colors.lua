@@ -11,22 +11,22 @@ return {
 	magenta = 0xffbb9af7,
 	grey = 0xff565f89,
 	transparent = 0x00000000,
-  
+
 	bar = {
-	  bg = 0xff1f2335,
-	  border = 0xffa9b1d6,
+		bg = 0xff1f2335,
+		border = 0xffa9b1d6,
 	},
 	popup = {
-	  bg = 0xc01f2335,
-	  border = 0xff7dcfff,
+		bg = 0xc01f2335,
+		border = 0xff7dcfff,
 	},
 	bg1 = 0xff292e42,
 	bg2 = 0xff1f2335,
-  
+
 	with_alpha = function(color, alpha)
-	  if alpha > 1.0 or alpha < 0.0 then
-		return color
-	  end
-	  return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+		if alpha > 1.0 or alpha < 0.0 then
+			return color
+		end
+		return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
 	end,
-  }
+}

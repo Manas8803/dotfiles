@@ -12,6 +12,7 @@ local popup_width = 250
 local wifi_up = sbar.add("item", "widgets.wifi1", {
   position = "right",
   padding_left = -10,
+  padding_right = 10,
   width = "dynamic",
   label = {
     font = {
@@ -111,37 +112,31 @@ local router = sbar.add("item", {
 
 sbar.add("item", { position = "right", width = "dynamic" })
 wifi_up:subscribe({ "wifi_change", "system_woke" }, function(env)
-  sbar.exec("ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-    local ssid = result:gsub("\n", "")
-    local connected = not (ip == "")
+  sbar.exec("networksetup -getairportnetwork en0 | awk -F ': ' '{print $2}'", function(result)
+    local ssid = result:gsub("\n", "") -- Remove newline characters
+    local connected = ssid ~= "" and not ssid:match("not associated")
+
     wifi_up:set({
       icon = {
-        string = (connected and icons.wifi.connected) or icons.wifi.disconnected,
-        color = connected and colors.white
+        string = connected and icons.wifi.connected or icons.wifi.disconnected,
+        color = connected and colors.white or colors.white
       },
       label = {
-        string = ssid,
-        color = colors.red
+        string = connected and ssid or "Disconnected",
+        color = connected and colors.magenta or colors.red
       }
     })
   end)
 end)
 
+-- WIFI SPEED :
 -- wifi_up:subscribe("network_update", function(env)
---   local up_color = (env.upload == "000 Bps") and colors.grey or colors.red
---   local down_color = (env.download == "000 Bps") and colors.grey or colors.blue
+--   local up_color = (env.upload == "000 Bps") and colors.grey or colors.white
 --   wifi_up:set({
 --     icon = { color = up_color },
 --     label = {
 --       string = env.upload,
---       color = up_color
---     }
---   })
---   wifi_down:set({
---     icon = { color = down_color },
---     label = {
---       string = env.download,
---       color = down_color
+--       color = colors.red
 --     }
 --   })
 -- end)

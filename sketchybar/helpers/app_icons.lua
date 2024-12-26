@@ -30,7 +30,6 @@ return {
   ["Anytype"] = ":anytype:",
   ["TeamSpeak 3"] = ":team_speak:",
   ["LibreWolf"] = ":libre_wolf:",
-  ["Neovide"] = ":neovide:",
   ["neovide"] = ":neovide:",
   ["Spotlight"] = ":spotlight:",
   ["微信"] = ":wechat:",
