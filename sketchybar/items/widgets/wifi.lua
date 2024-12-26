@@ -20,7 +20,7 @@ local wifi_up = sbar.add("item", "widgets.wifi1", {
       size = 11.0,
     },
     color = colors.red,
-    string = "Unknown SSID",
+    string = "Disconnected",
   },
   y_offset = 0,
 })
@@ -49,7 +49,7 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
   wifi_up.name,
 }, {
   background = { color = colors.bg1 },
-  popup = { align = "center", height = 0 }
+  popup = { align = "center", height = 30 }
 })
 
 local hostname = sbar.add("item", {
