@@ -5,15 +5,15 @@ local whitelist = {
     ["Spotify"] = true,
     ["Music"] = true,
     ["VLC"] = true,
-    ["Firefox"] = true,  -- For web-based players
-    ["Chrome"] = true,   -- For web-based players
+    ["Firefox"] = true, -- For web-based players
+    ["Chrome"] = true,  -- For web-based players
     ["mpv"] = true,
     ["Apple Music"] = true,
     ["iTunes"] = true,
-    ["Brave"] = true,   -- For web-based players
+    ["Brave"] = true,    -- For web-based players
     ["chromium"] = true, -- For web-based players
-    ["cmus"] = true,    -- Terminal music player
-    ["ncmpcpp"] = true, -- Terminal music player
+    ["cmus"] = true,     -- Terminal music player
+    ["ncmpcpp"] = true,  -- Terminal music player
     ["mplayer"] = true,
     ["rhythmbox"] = true,
     ["clementine"] = true,
@@ -22,11 +22,11 @@ local whitelist = {
 
 local media_cover = sbar.add("item", {
     position = "right",
-    padding_right = 40,
+    padding_right = -20,
     background = {
         image = {
             string = "media.artwork",
-            scale = 0.85,
+            scale = 0.95,
         },
         color = colors.transparent,
     },
@@ -35,7 +35,7 @@ local media_cover = sbar.add("item", {
     drawing = false,
     updates = true,
     popup = {
-        align = "center",
+        align = "right",
         horizontal = true,
     }
 })
@@ -107,16 +107,16 @@ media_cover:subscribe("media_change", function(env)
     -- Check if any media is playing, regardless of the app
     local drawing = (env.INFO.state == "playing")
     -- Always show media info if something is playing
-    media_artist:set({ 
-        drawing = drawing, 
+    media_artist:set({
+        drawing = drawing,
         label = env.INFO.artist or "Unknown Artist",
     })
-    media_title:set({ 
-        drawing = drawing, 
+    media_title:set({
+        drawing = drawing,
         label = env.INFO.title or "Unknown Title",
     })
     media_cover:set({ drawing = drawing })
-    
+
     if drawing then
         animate_detail(true)
         interrupt = interrupt + 1
@@ -137,9 +137,9 @@ media_cover:subscribe("mouse.exited", function(env)
 end)
 
 media_cover:subscribe("mouse.clicked", function(env)
-    media_cover:set({ popup = { drawing = "toggle" }})
+    media_cover:set({ popup = { drawing = "toggle" } })
 end)
 
 media_title:subscribe("mouse.exited.global", function(env)
-    media_cover:set({ popup = { drawing = false }})
+    media_cover:set({ popup = { drawing = false } })
 end)

@@ -4,38 +4,38 @@ local settings = require("settings")
 
 -- Execute the event provider binary which provides the event "network_update"
 -- for the network interface "en0", which is fired every 2.0 seconds.
-sbar.exec("killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en0 network_update 2.0")
+sbar.exec(
+  "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en0 network_update 2.0")
 
 local popup_width = 250
 
 local wifi_up = sbar.add("item", "widgets.wifi1", {
   position = "right",
-  padding_left = 0,
-  padding_right = 25,
-  width = 0,
+  padding_left = -10,
+  width = "dynamic",
   label = {
     font = {
       family = settings.font.numbers,
       style = settings.font.style_map["Bold"],
-      size = 10.0,
+      size = 11.6,
     },
     color = colors.red,
     string = "Unknown SSID",
   },
   y_offset = 0,
 })
+-- wifi:subscribe({"wifi_change", "system_woke"}, function(env)
+--   sbar.exec("ipconfig getifaddr en0", function(ip)
+--     local connected = not (ip == "")
+--     wifi:set({
+--       icon = {
+--         string = connected and icons.wifi.connected or icons.wifi.disconnected,
+--         color = connected and colors.white,
+--       },
+--     })
+--   end)
+-- end)
 
-wifi_up:subscribe({"wifi_change", "system_woke"}, function(env)
-  sbar.exec("ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-    local ssid = result:gsub("\n", "") -- Remove newline characters
-    wifi_up:set({
-      label = {
-        string = ssid,
-        color = colors.red
-      }
-    })
-  end)
-end)
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
   position = "right",
@@ -49,7 +49,7 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
   wifi_up.name,
 }, {
   background = { color = colors.bg1 },
-  popup = { align = "left", height = 30 }
+  popup = { align = "center", height = 0 }
 })
 
 local hostname = sbar.add("item", {
@@ -109,7 +109,23 @@ local router = sbar.add("item", {
   },
 })
 
-sbar.add("item", { position = "right", width = settings.group_paddings })
+sbar.add("item", { position = "right", width = "dynamic" })
+wifi_up:subscribe({ "wifi_change", "system_woke" }, function(env)
+  sbar.exec("ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
+    local ssid = result:gsub("\n", "")
+    local connected = not (ip == "")
+    wifi_up:set({
+      icon = {
+        string = (connected and icons.wifi.connected) or icons.wifi.disconnected,
+        color = connected and colors.white
+      },
+      label = {
+        string = ssid,
+        color = colors.red
+      }
+    })
+  end)
+end)
 
 -- wifi_up:subscribe("network_update", function(env)
 --   local up_color = (env.upload == "000 Bps") and colors.grey or colors.red
@@ -130,17 +146,6 @@ sbar.add("item", { position = "right", width = settings.group_paddings })
 --   })
 -- end)
 
-wifi:subscribe({"wifi_change", "system_woke"}, function(env)
-  sbar.exec("ipconfig getifaddr en0", function(ip)
-    local connected = not (ip == "")
-    wifi:set({
-      icon = {
-        string = connected and icons.wifi.connected or icons.wifi.disconnected,
-        color = connected and colors.white or colors.red,
-      },
-    })
-  end)
-end)
 
 local function hide_details()
   wifi_bracket:set({ popup = { drawing = false } })
@@ -149,7 +154,7 @@ end
 local function toggle_details()
   local should_draw = wifi_bracket:query().popup.drawing == "off"
   if should_draw then
-    wifi_bracket:set({ popup = { drawing = true }})
+    wifi_bracket:set({ popup = { drawing = true } })
     sbar.exec("networksetup -getcomputername", function(result)
       hostname:set({ label = result })
     end)
@@ -174,7 +179,7 @@ wifi:subscribe("mouse.exited.global", hide_details)
 local function copy_label_to_clipboard(env)
   local label = sbar.query(env.NAME).label.value
   sbar.exec("echo \"" .. label .. "\" | pbcopy")
-  sbar.set(env.NAME, { label = { string = icons.clipboard, align="center" } })
+  sbar.set(env.NAME, { label = { string = icons.clipboard, align = "center" } })
   sbar.delay(1, function()
     sbar.set(env.NAME, { label = { string = label, align = "right" } })
   end)
