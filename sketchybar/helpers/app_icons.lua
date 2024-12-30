@@ -14,7 +14,7 @@ return {
   ["Calendar"] = ":calendar:",
   ["日历"] = ":calendar:",
   ["Fantastical"] = ":calendar:",
-  ["Cron"] = ":calendar:",
+  ["Cron"] = ":calendar:",  
   ["Amie"] = ":calendar:",
   ["Figma"] = ":figma:",
   ["Element"] = ":element:",
