@@ -36,7 +36,23 @@ yabai -m mouse_drop_action swap
 
 
 # disable specific apps
-yabai -m rule --add app="^System Settings$" manage=off
+
+# System Apps
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Console$" manage=off
+yabai -m rule --add app="^Digital Color Meter$" manage=off
+
+# Utility Apps
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^1Password$" manage=off
+
+# Media & Preview Apps
 yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^Photo Booth$" manage=off
+
+# Floating Apps & Utilities
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^Logi Options$" manage=off

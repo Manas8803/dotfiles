@@ -28,8 +28,6 @@ alt - d : yabai -m window --focus east
 
 # Focus on spaces
 
-
-
 #change focus between external displays (left and right)
 alt - j: yabai -m display --focus west
 alt - k: yabai -m display --focus east
@@ -101,14 +99,19 @@ cmd + ctrl - s : sketchybar --reload
 shift + alt - n : yabai -m space --create && \
                 index="$(yabai -m query --spaces | jq '.[-1].index')" && \
                 sketchybar --reload && \
-                yabai -m space --focus "${index}" && \
-                yabai -m window --space "${index}"
+                yabai -m space --focus "$index" && \
+                yabai -m window --space "$index" && \
+                yabai -m window --focus recent
                 
 
-shift + alt - z : yabai -m space --destroy && \
-                   index="$(yabai -m query --spaces | jq '.[-1].index')" && \
-                   yabai -m space --focus "${index-1}" && \
-                   yabai -m window --space "${index-1}"
+alt - q : index="$(yabai -m query --spaces --space | jq '.index')" && \
+                   yabai -m space --destroy && \
+                   yabai -m space --focus $(($index-1)) && \
+                   yabai -m window --space $(($index-1))
+
+shift + ctrl + alt - n : yabai -m space --create && \
+                         yabai -m window --space last && \
+                         yabai -m space --focus 5
 
 # resize window
 alt + shift - h : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0

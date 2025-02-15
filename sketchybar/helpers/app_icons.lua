@@ -1,5 +1,6 @@
 return {
   ["Typora"] = ":text:",
+  ["Postman"] = ":postman:",
   ["Orion"] = ":orion:",
   ["Orion RC"] = ":orion:",
   ["Grammarly Editor"] = ":grammarly:",
@@ -207,5 +208,7 @@ return {
   ["Thunderbird"] = ":thunderbird:",
   ["Firefox"] = ":firefox:",
   ["WezTerm"] = ":wezterm:",
+  ["Activity Monitor"] = ":activity_monitor:",
   ["default"] = ":default:",
+  
 }
