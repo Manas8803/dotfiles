@@ -10,6 +10,21 @@ alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 
+# Insert a new space 
+ctrl + alt - 1 : ~/.config/skhd/long_cmds/insert_space.sh 1 && sketchybar --reload
+ctrl + alt - 2 : ~/.config/skhd/long_cmds/insert_space.sh 2 && sketchybar --reload
+ctrl + alt - 3 : ~/.config/skhd/long_cmds/insert_space.sh 3 && sketchybar --reload
+ctrl + alt - 4 : ~/.config/skhd/long_cmds/insert_space.sh 4 && sketchybar --reload
+ctrl + alt - 5 : ~/.config/skhd/long_cmds/insert_space.sh 5 && sketchybar --reload
+ctrl + alt - 6 : ~/.config/skhd/long_cmds/insert_space.sh 6 && sketchybar --reload
+ctrl + alt - 7 : ~/.config/skhd/long_cmds/insert_space.sh 7 && sketchybar --reload
+ctrl + alt - 8 : ~/.config/skhd/long_cmds/insert_space.sh 8 && sketchybar --reload
+ctrl + alt - 9 : ~/.config/skhd/long_cmds/insert_space.sh 9 && sketchybar --reload
+
+# Navigate between spaces
+ctrl - right : yabai -m space --focus next || yabai -m space --focus first
+ctrl - left : yabai -m space --focus prev || yabai -m space --focus last
+
 # Swap spaces
 shift + ctrl - 1 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  1 && sketchybar --reload
 shift + ctrl - 2 : yabai -m space $(yabai -m query --spaces --space | jq -r '.index') --swap  2 && sketchybar --reload
@@ -97,12 +112,14 @@ ctrl + alt - r : yabai --restart-service
 cmd + ctrl - s : sketchybar --reload
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-shift + alt - n : yabai -m space --create && \
+shift + ctrl - n : yabai -m space --create && \
                 index="$(yabai -m query --spaces | jq '.[-1].index')" && \
                 sketchybar --reload && \
                 yabai -m space --focus "$index" && \
                 yabai -m window --space "$index" && \
                 yabai -m window --focus recent
+
+shift + alt - n : ~/.config/skhd/long_cmds/insert_space_next.sh && sketchybar --reload
                 
 
 alt - q : index="$(yabai -m query --spaces --space | jq '.index')" && \
