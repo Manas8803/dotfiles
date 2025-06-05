@@ -10,6 +10,11 @@ alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 alt - 9 : yabai -m space --focus 9
 
+# First and last space focus
+
+alt - n: yabai -m space --focus first
+alt - m: yabai -m space --focus last
+
 # Insert a new space 
 ctrl + alt - 1 : ~/.config/skhd/long_cmds/insert_space.sh 1 && sketchybar --reload
 ctrl + alt - 2 : ~/.config/skhd/long_cmds/insert_space.sh 2 && sketchybar --reload
