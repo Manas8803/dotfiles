@@ -1,10 +1,10 @@
 /gh
 /simple-update-notifier
 /github-copilot
-/fish
 /configstore
-;
 /raycast
 /gcloud
 .DS_Store
-fsh
+/kitty
+/ranger
+/nvim
